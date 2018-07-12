@@ -23,6 +23,9 @@ def main():
     model.add(Dense(512))
     model.add(Dense(1, activation='sigmoid'))
 
+    model.summary()
+
+
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
     model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=10, batch_size=64)
     result = model.evaluate(X_test, y_test, verbose=0)
