@@ -33,8 +33,6 @@ def main():
     shap_values = explainer.shap_values(np.ones((1,50)), nsamples=1000)
     preds = model.predict(preprocess_input(np.expand_dims(img_orig.copy(), axis=0)))
     top_preds = np.argsort(-preds)
-
-    shap.
     #shap.image_plot(shape_values, preds)
 
 main()
